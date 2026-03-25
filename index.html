@@ -33,7 +33,6 @@ body {
     transition: all 0.5s ease;
 }
 
-/* Hidden state for animation */
 .hidden {
     opacity: 0;
     transform: translateY(20px);
@@ -58,7 +57,25 @@ p {
     font-size: 1em;
     line-height: 1.7;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
+}
+
+/* Photo frame */
+.photo-frame {
+    margin: 15px auto 25px;
+    padding: 8px;
+    border-radius: 18px;
+    background: #fff;
+    border: 3px solid #111;
+    display: inline-block;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.photo-frame img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
 /* Buttons */
@@ -83,7 +100,7 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Page 2 initially hidden */
+/* Page 2 */
 #page2 {
     position: absolute;
 }
@@ -97,6 +114,11 @@ button:hover {
     <div class="bow">🎀</div>
 
     <h1>hey siaa</h1>
+
+    <!-- PHOTO -->
+    <div class="photo-frame">
+        <img src="her.jpg" alt="siaa">
+    </div>
 
     <p>
     i’m really sorry. i know you needed me in that moment, and i left the meet instead of staying with you. 
@@ -138,10 +160,8 @@ function forgive() {
     const page1 = document.getElementById("page1");
     const page2 = document.getElementById("page2");
 
-    // fade out page 1
     page1.classList.add("hidden");
 
-    // after fade out, show page 2
     setTimeout(() => {
         page1.style.display = "none";
         page2.classList.remove("hidden");
