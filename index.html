@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For Siaa ❤️</title>
+<title>For Siaa</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
@@ -11,144 +11,147 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #ff758c, #ff7eb3, #fad0c4);
+    background: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Box */
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    width: 360px;
     text-align: center;
-    color: #222;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.5s ease;
 }
 
+/* Hidden state for animation */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+/* Bow */
+.bow {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    font-size: 26px;
+}
+
+/* Text */
 h1 {
-    margin-top: 40px;
-    font-size: 2.8em;
-    font-weight: 700;
-}
-
-h2 {
-    font-weight: 600;
-}
-
-.section {
-    margin: 30px 20px;
+    font-size: 1.8em;
+    margin-bottom: 15px;
 }
 
 p {
-    font-size: 1.1em;
-    line-height: 1.6;
+    font-size: 1em;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 20px;
 }
 
-.sorry {
-    font-size: 1.3em;
-    opacity: 0.9;
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
-    100% { transform: translateY(0px); }
-}
-
-img {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 20px;
-    margin: 10px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease;
-}
-
-img:hover {
-    transform: scale(1.05);
+/* Buttons */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
 }
 
 button {
-    margin: 20px;
-    padding: 14px 24px;
-    font-size: 16px;
+    padding: 12px 20px;
     border: none;
-    border-radius: 30px;
+    border-radius: 25px;
     cursor: pointer;
-    background: #111;
+    font-size: 14px;
+    background: black;
     color: white;
     transition: 0.3s;
 }
 
 button:hover {
-    background: #333;
     transform: scale(1.05);
 }
 
-#message {
-    display: none;
-    font-size: 1.2em;
-    margin-top: 20px;
+/* Page 2 initially hidden */
+#page2 {
+    position: absolute;
 }
 </style>
 </head>
 
 <body>
 
-<h1>hey siaa ❤️</h1>
+<!-- PAGE 1 -->
+<div class="container" id="page1">
+    <div class="bow">🎀</div>
 
-<div class="section">
-    <p class="sorry">i’m really sorry 🥺</p>
-    <p class="sorry">like… actually sorry</p>
+    <h1>hey siaa</h1>
 
     <p>
-    i know you needed me and i left the meet.<br>
-    that wasn’t fair to you.
+    i’m really sorry. i know you needed me in that moment, and i left the meet instead of staying with you. 
+    that wasn’t fair, and you didn’t deserve that from me.
     </p>
 
     <p>
-    you deserved me staying. listening. being there.<br>
-    i’ll do better next time — no excuses.
+    i should’ve been there, listening and just being with you. i can’t change what happened, but i do understand it, 
+    and i’ll make sure i show up better next time.
     </p>
 
     <p>
-    you matter to me. a lot. ❤️
+    you matter to me more than i showed in that moment, and i mean that.
+    </p>
+
+    <div class="buttons">
+        <button onclick="forgive()">yes, i forgive you</button>
+        <button onmouseover="moveNo(this)">no</button>
+    </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="container hidden" id="page2">
+    <div class="bow">🎀</div>
+
+    <h1>yayyaayaa 💗</h1>
+
+    <p>
+    love you so muchh siaa. i’ll make it up to you properly this time, and i’ll do better where it actually matters.
+    </p>
+
+    <p>
+    thank you for staying.
     </p>
 </div>
-
-<div class="section">
-    <h2>us 💗</h2>
-
-    <!-- IMPORTANT: replace with your real image names -->
-    <img src="her.png" alt="her">
-    <img src="us.png" alt="us">
-</div>
-
-<div class="section">
-    <h2>why i love you</h2>
-    <p>💗 the way you make normal days feel special</p>
-    <p>💗 your smile (yes, that one)</p>
-    <p>💗 how you care, even when you’re mad</p>
-    <p>💗 the way you make me want to be better</p>
-    <p>💗 and honestly… just you</p>
-</div>
-
-<!-- MUSIC BUTTON -->
-<button onclick="playMusic()">play our song 🎵</button>
-
-<audio id="bgMusic" loop>
-  <source src="song.mp3" type="audio/mpeg">
-</audio>
-
-<br>
-
-<button onclick="forgive()">okay… i forgive you ❤️</button>
-
-<p id="message">
-okay wow 😭❤️<br><br>
-i’ll make it up to you — properly this time.
-</p>
 
 <script>
 function forgive() {
-    document.getElementById("message").style.display = "block";
+    const page1 = document.getElementById("page1");
+    const page2 = document.getElementById("page2");
+
+    // fade out page 1
+    page1.classList.add("hidden");
+
+    // after fade out, show page 2
+    setTimeout(() => {
+        page1.style.display = "none";
+        page2.classList.remove("hidden");
+    }, 400);
 }
 
-function playMusic() {
-    document.getElementById("bgMusic").play();
+function moveNo(btn) {
+    btn.style.position = "absolute";
+    btn.style.top = Math.random() * 300 + "px";
+    btn.style.left = Math.random() * 300 + "px";
 }
 </script>
 
